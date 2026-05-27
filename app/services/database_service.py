@@ -19,8 +19,17 @@ class DatabaseService:
                 "success": True,
                 "message": "Connection successful"
             }
-
         except Exception as ex:
+
+            error = str(ex)
+            print("DATABASE ERROR:", error)
+
+            return {
+                "success": False,
+                "message": error
+            }
+
+        """except Exception as ex:
 
             error = str(ex)
 
@@ -33,7 +42,7 @@ class DatabaseService:
             return {
                 "success": False,
                 "message": error
-            }
+            }"""
 
     @staticmethod
     def execute_schema(request):
